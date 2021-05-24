@@ -1,0 +1,24 @@
+{
+  "name": "challenge4_gh_pmj",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ApcarJo/Challenge4_GH_PMJ.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ApcarJo/Challenge4_GH_PMJ/issues"
+  },
+  "homepage": "https://github.com/ApcarJo/Challenge4_GH_PMJ#readme",
+  "dependencies": {
+    "axios": "0.21.1",
+    "express": "4.17.1"
+  }
+}
