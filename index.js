@@ -7,3 +7,5 @@ app.use(router);
 app.use(express.json());
 
 app.listen(port, () => console.log(`Node server running on http://localhost:${port}`));
+
+console.log("hola, probando esto");
