@@ -39,7 +39,7 @@ The aim of the project was to develop an only-backend service for movies rental,
     * Create an Order Endpoint
         * One Movie per Client
         * Reception and Return Dates
-    * Extra features: Show all Orders (as Admin)
+    * Extra features: Show all Orders (as Admin).
 * Data Management
     * Use of an ORM (Sequelize/MongoDB/MySQL)
 
