@@ -37,7 +37,7 @@ router.get('/:name', authenticate, async (req, res)=> {
     }
 });
 
-router.post('/', async (req, res)=> {             //id/:id
+router.post('/', async (req, res)=> {
     try {
         const body = req.body;
         res.json(await costumerController.newCostumer(body));
@@ -49,7 +49,7 @@ router.post('/', async (req, res)=> {             //id/:id
     }
 });
 
-router.put('/', async (req, res)=> {             //id/:id
+router.put('/', async (req, res)=> {
     try {
         const attributes = req.body;
         res.json(await costumerController.modifyCostumer(attributes));
