@@ -1,46 +1,49 @@
-# Challenge 4: Movies Website Backend
+# Challenge 5: Movies Website Backend II: Finder
 ## Made by [Pedro Agulló](https://github.com/PedroAgullo), [Jose Luis Aparicio](https://github.com/ApcarJo) and [Miguel Torres](https://github.com/migueltmsp)<br>
 ## Hecho por [Pedro Agulló](https://github.com/PedroAgullo), [Jose Luis Aparicio](https://github.com/ApcarJo) and [Miguel Torres](https://github.com/migueltmsp)<br>
 
-This project was proposed and deployed on the 4th week of [GeeksHubs' Full Stack Developer Bootcamp](https://geekshubsacademy.com/)
+This project was proposed and deployed on the 5th week of [GeeksHubs' Full Stack Developer Bootcamp](https://geekshubsacademy.com/)
 
-Este proyecto se propuso e implementó en la cuarta semana del [Bootcamp Full Stack Developer de GeeksHubs](https://geekshubsacademy.com/)
+Este proyecto se propuso e implementó en la 5ª semana del [Bootcamp Full Stack Developer de GeeksHubs](https://geekshubsacademy.com/)
 
 ## Index
-English
-* [Goal and used technologies](##Goal)
-* [Common part](##Common-part)
-* [Pedro's part](##Pedro's-part)
-* [Jose Luis' part](##Jose-Luis'-part)
-* [Miguel's part](##Miguel's-part)
+[English](##English)
+* [Goal and used technologies](##Goal-and-used-technologies)
+* [Sample1](##Sample-1)
+* [Sample2](##Sample-2)
 * [Conclusions](##Conclusions)
 
-Español
+[Español](##Español)
 * [Objetivo y tecnologías empleadas](##Objetivo-y-tecnologías-empleadas)
-* [Parte en común](##Parte-en-común)
-* [Sección de Pedro](##Sección-de-Pedro)
-* [Sección de Jose Luis](##Sección-de-Jose-Luis)
-* [Sección de Miguel](##Sección-de-Miguel)
+* [Ejemplo1](##Ejemplo-1)
+* [Ejemplo2](##Ejemplo-2)
 * [Conclusiones](##Conclusiones)
 
 ## English
 ## Goal and used technologies
 
-The aim of the project was to develop an API directed to concrete moviedatabase DB endpoints, in order to address to the following functions: <br>
+The aim of the project was to develop an only-backend service for movies rental, with four defined areas: <br>
 
-* Obtaining a list of the top rated films
-* Obtaining a movie given its id
-* Obtaining a movie given its title
-* Obtaining movies given a genre (indicating **name**, not **id**)
-* Obtaining a list of the top rated series
-* Obtaining a series given its id
-* Obtaining a series given their title
-* Obtaining series which will have at least one episode aired in the next seven days
-* Obtaining series which are screened on theathers
+* User Management
+    * Sign Up Endpoint
+    * Profile Endpoint
+    * Delete Account Endpoint
+    * Log In Endpoint
+    * Extra features: JWT; Admin and Client
+* Movie/Product Management
+    * Search by Title Endpoint
+    * Search by Id Endpoint
+    * Display all Movies Endpoint
+    * Extra features: Filter by Actress/Actor; <br>Filter by Genre
+* Order Management
+    * Create an Order Endpoint
+        * One Movie per Client
+        * Reception and Return Dates
+    * Extra features: Show all Orders (as Admin)
+* Data Management
+    * Use of an ORM (Sequelize/MongoDB/MySQL)
 
-With that in mind, and taking into consideration that our team was composed of three people, each one of us handled three of those tasks.
-
-## Common part
+## Sample 1
 
 ### index.js
 ```
@@ -83,6 +86,7 @@ module.exports = router;
 ```
 This js file **imports the .Router() utility from Express.js**, which is used to **link the moviesRouter and seriesRouter paths, and therefore their content, to index.js**. In this sense, **router.js is merely a link between the main application (index.js) to its dependencies.**
 
+## Sample 2
 
 ## How to...
 
@@ -122,3 +126,30 @@ http://localhost:3000/series/ontheair7/
 
 Obtaining series which are screened on theaters:<br>
 http://localhost:3000/series/screenedtheater/
+
+## Español
+## Objetivo y tecnologías empleadas
+El objetivo del proyecto es desarrollar un servicio (solo la parte backend) para alquiler de películas, con cuatro áreas definidas: <br>
+
+
+* Gestión de Usuarios
+    * Endpoint para Darse de Alta
+    * Endpoint para mostart Información de la Cuenta
+    * Endpoint para Darse de Baja
+    * Endpoint para Iniciar Sesión
+    * Características extra: JWT; Admin y Cliente
+* Gestión de Películas/Productos
+    * Endpoint para Búsqueda por Título
+    * Endpoint para buscar por Id
+    * Endpoint para Mostrar todas las Películas
+    * Características extra: Filtrar por Actriz/Actor; <br>Filtrar por Género
+* Gestión de los Pedidos
+    * Endpoint para Crear un Pedido
+        * Una única Película por Cliente
+        * Fechas de Recepción y de Devolución
+    * Características extra: Mostrar todos los Pedidos (solo para el Admin)
+* Gestión de Datos
+    * Emplear un ORM (Sequelize/MongoDB/MySQL)
+## Ejemplo 1
+## Ejemplo 2
+## Conclusiones
