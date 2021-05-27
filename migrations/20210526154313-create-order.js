@@ -9,7 +9,13 @@ module.exports = {
         type: Sequelize.INTEGER
       },
       costumerIdFK: {
-        type: Sequelize.INTEGER
+        type: Sequelize.INTEGER,
+        references: {
+          model: 'Costumers',
+          key: 'id'
+        },
+        onUpdate: 'CASCADE',
+        onDelete: 'CASCADE'
       },
       movieId: {
         type: Sequelize.INTEGER
