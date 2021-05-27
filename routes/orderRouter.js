@@ -14,10 +14,11 @@ const orderController = require("../controllers/orderController.js");
 
 
 // PUSH - CREATE A NEW ORDER
-router.post("/", authenticate, async (req,res) =>{
+router.post("/", async (req,res) =>{
     try{
-        let id = req.params.id;
-        res.json(await orderController.newOrder(req.body));
+        const body = req.body;
+        console.log(body);
+        res.json(await orderController.newOrder(body));
     }catch (err){
         return res.status(500).json({
             message: err.message
@@ -25,22 +26,11 @@ router.post("/", authenticate, async (req,res) =>{
     }
 });
 
-//PUT - MODIFY ORDER
-router.put('/', authenticate, async (req, res) => {
-    try {
-        const cuerpoDeDatos = req.body;
-        res.json(await pasajeroController.modifyPassenger(cuerpoDeDatos));
 
-    }catch (err) {
-        return res.status(500).json({
-            message: err.message
-        });
-    }
-});
 
 
 // DELETE - DELETE ORDER
-router.delete('/:id', admin,  async (req, res) => {
+router.delete('/:id', async (req, res) => {
     try {
         const id = req.params.id;
         res.json(await pasajeroController.deleteOrder(id));
@@ -51,3 +41,5 @@ router.delete('/:id', admin,  async (req, res) => {
         });
     }
 });
+
+module.exports = router;

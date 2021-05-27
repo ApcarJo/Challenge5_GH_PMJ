@@ -72,3 +72,5 @@ router.delete('/:id', admin, async (req, res) =>{
         }); 
     }
 });
+
+module.exports = router;
