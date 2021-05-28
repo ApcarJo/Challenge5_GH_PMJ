@@ -1,5 +1,6 @@
 const router = require("express").Router();
 const orderController = require("../controllers/orderController.js");
+const authenticate = require('../middleware/authenticate.js');
 
 // CRUD
 
@@ -14,7 +15,7 @@ const orderController = require("../controllers/orderController.js");
 
 
 // PUSH - CREATE A NEW ORDER
-router.post("/", async (req,res) =>{
+router.post("/", authenticate, async (req,res) =>{
     try{
         let body = req.body;
         console.log(body);

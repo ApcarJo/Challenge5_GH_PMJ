@@ -16,9 +16,10 @@ router.get('/', admin, async (req, res) => {
     }
 });
 
-router.get('/customer/:id', authenticate, async (req, res)=> {             //id/:id
+router.post('/customer/', authenticate, async (req, res)=> {             //id/:id
     try {
-        let id = req.params.id;
+        let id = req.body.id;
+        console.log(id);
         res.json(await customerController.customerId(id));
         
     } catch (err) {
