@@ -1,21 +1,21 @@
-const { Rent } = require('../models');
+const { Order } = require('../models');
 
 
-class Order{
+class Rent{
 
     // Métodos controladores
     async newOrder(body){
         console.log(body);
-        return Rent.create(body);
+        return Order.create(body);
     }
 
 
     async deleteOrder(id){
 
-        return Rent.destroy({where: {id: id}});
+        return Order.destroy({where: {id: id}});
 
     }
 }
 
-let orderController = new Order();
+let orderController = new Rent();
 module.exports = orderController;
