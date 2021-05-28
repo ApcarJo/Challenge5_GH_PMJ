@@ -7,7 +7,7 @@ const authenticate = (req, res, next) => {
 
         if(!req.headers.authorization){
             // return new Error("No tienes autorización");
-            return "no tenías token ";
+            throw new Error("No tenías token");
             
         }
 
@@ -16,7 +16,7 @@ const authenticate = (req, res, next) => {
         let auth = jwt.verify(token,secret);
 
         if((auth.customerId != req.body.customerId) && auth.isAdmin != true){
-            throw new Error("No tienes permiso para realizar esta acción");
+            throw new Error("No tienes permiso para realizar esta acción de usuario");
         }
 
         return next();
