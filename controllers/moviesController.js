@@ -35,6 +35,14 @@ class Pelicula{
         
     }
 
+    async searchByAct(act){
+        console.log("Entramos a buscar el actor");
+        let res = await axios.get(`https://api.themoviedb.org/3/search/person?api_key=###&210d6a5dd3f16419ce349c9f1b200d6d&=${act}`);
+        return res.data;
+    }
+    
+
+
 }
 
 let moviesController = new Pelicula();
