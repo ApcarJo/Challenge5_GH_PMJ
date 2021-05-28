@@ -1,6 +1,5 @@
 const router = require('express').Router();
-const loginController = require('../controllers/login.Controller');
-const pasajeroController = require('../controllers/pasajero.Controller');
+const loginController = require('../controllers/loginController');
 
 router.post('/', async (req, res)=> {
     try {
@@ -15,7 +14,7 @@ router.post('/', async (req, res)=> {
         return res.status(500).json({
             message: err.message
         }); 
-    }
+    } 
 })
 
 module.exports = router;

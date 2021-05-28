@@ -3,6 +3,7 @@ const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 const secret = "Competencia de Netflix";
 
+
 class LoginController {
 
     async validate(nameCheck,passwordCheck){
