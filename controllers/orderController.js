@@ -11,9 +11,9 @@ class Rent{
 
 
     async deleteOrder(id){
-
-        return Order.destroy({where: {id: id}});
-
+        return Order.destroy({
+            where: {id}
+        })
     }
 }
 
