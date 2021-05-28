@@ -50,7 +50,6 @@ router.get("/screenedtheater/:id", async (req, res) => {
 
 router.get("/toprated", async (req, res) => {
     try{
-        let id = req.params.id;
         res.json(await seriesController.topRated());
     } catch (err){
         return res.status(500).json({
