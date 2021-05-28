@@ -19,7 +19,7 @@ router.get('/', admin, async (req, res) => {
 router.get('/customer/:id', authenticate, async (req, res)=> {             //id/:id
     try {
         let id = req.params.id;
-        res.json(await customerController.searchById(id));
+        res.json(await customerController.customerId(id));
         
     } catch (err) {
         return res.status(500).json({
