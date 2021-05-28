@@ -1,4 +1,4 @@
-const costumerController = require('./costumerController');
+const customerController = require('./customerController');
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 const secret = "Competencia de Netflix";
@@ -7,8 +7,8 @@ class LoginController {
 
     async validate(nameCheck,passwordCheck){
         
-        let costumer = await costumerController.nameCostumer(nameCheck);
-        let password = costumer.password;
+        let customer = await customerController.nameCustomer(nameCheck);
+        let password = customer.password;
 
         let verify = await bcrypt.compare(passwordCheck, password);
 
@@ -17,9 +17,9 @@ class LoginController {
         }
 
         let payload = {
-            costumerId : costumer.id,
+            customerId : customer.id,
             createdAt: new Date,
-            isAdmin: costumer.admin,
+            isAdmin: customer.admin,
         };
 
         return jwt.sign(payload, secret);
