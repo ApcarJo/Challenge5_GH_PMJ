@@ -1,5 +1,8 @@
 const router = require("express").Router();
 const customerController = require("../controllers/customerController.js");
+const authenticate = require('../middleware/authenticate');
+const admin = require('../middleware/admin');
+
 
 //CRUD CUSTOMER
 
