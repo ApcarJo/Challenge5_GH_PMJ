@@ -5,7 +5,7 @@ class Rent{
 
     // Métodos controladores
     async newOrder(body){
-        console.log(body);
+        console.log("newOrder", body);
         return Order.create(body);
     }
 

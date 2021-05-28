@@ -5,8 +5,9 @@ const router = require('./router');
 const db = require('./db.js');
 
 // Middleware
+app.use(express.json());  //Importante la prioridad a la hora de declararlo.
 app.use(router);
-app.use(express.json());
+
 
 
 //Connecting to the database

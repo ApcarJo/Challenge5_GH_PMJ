@@ -16,7 +16,7 @@ const orderController = require("../controllers/orderController.js");
 // PUSH - CREATE A NEW ORDER
 router.post("/", async (req,res) =>{
     try{
-        const body = req.body;
+        let body = req.body;
         console.log(body);
         res.json(await orderController.newOrder(body));
     }catch (err){
@@ -33,7 +33,7 @@ router.post("/", async (req,res) =>{
 router.delete('/:id', async (req, res) => {
     try {
         const id = req.params.id;
-        res.json(await pasajeroController.deleteOrder(id));
+        res.json(await orderController.deleteOrder(id));
 
     }catch (err) {
         return res.status(500).json({
