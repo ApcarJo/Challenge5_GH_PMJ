@@ -34,7 +34,7 @@ router.post("/", authenticate, async (req,res) =>{
 // DELETE - DELETE ORDER
 router.delete('/', admin, async (req, res) => {
     try {
-        const body = req.body;
+        const body = req.body.id;
         res.json(await orderController.deleteOrder(body));
 
     }catch (err) {
