@@ -15,7 +15,7 @@ const admin = (req, res, next) => {
 
         let auth = jwt.verify(token,secret);
 
-        if((auth.pasajeroId != req.body.id) && auth.admin == req.body.admin){
+        if((auth.pasajeroId != req.body.id) && auth.isAdmin == req.body.admin){
             throw new Error("No tienes permiso para realizar esta acción");
         }
 
