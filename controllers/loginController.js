@@ -6,9 +6,9 @@ const secret = "Competencia de Netflix";
 
 class LoginController {
 
-    async validate(nameCheck,passwordCheck){
+    async validate(mailCheck,passwordCheck){
         
-        let customer = await customerController.nameCustomer(nameCheck);
+        let customer = await customerController.mailCustomer(mailCheck);
         let password = customer.password;
 
         let verify = await bcrypt.compare(passwordCheck, password);

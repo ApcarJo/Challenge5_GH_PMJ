@@ -15,6 +15,12 @@ class Client {
         })
     }
 
+    async mailCustomer(mail){
+        return Customer.findOne({
+            where: {mail}
+        })
+    }
+
     async customerId(id){
 
         return Customer.findByPk(id);

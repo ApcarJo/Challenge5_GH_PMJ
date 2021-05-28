@@ -1,6 +1,7 @@
 const router = require("express").Router();
 const orderController = require("../controllers/orderController.js");
 const authenticate = require('../middleware/authenticate.js');
+const admin = require ('../middleware/admin.js');
 
 // CRUD
 
@@ -31,10 +32,10 @@ router.post("/", authenticate, async (req,res) =>{
 
 
 // DELETE - DELETE ORDER
-router.delete('/:id', async (req, res) => {
+router.delete('/', admin, async (req, res) => {
     try {
-        const id = req.params.id;
-        res.json(await orderController.deleteOrder(id));
+        const body = req.body;
+        res.json(await orderController.deleteOrder(body));
 
     }catch (err) {
         return res.status(500).json({

@@ -6,10 +6,10 @@ const customerController = require('../controllers/customerController');
 router.post('/', async (req, res)=> {
     try {
 
-        const nombreCheck = req.body.name;
+        const mailCheck = req.body.mail;
         const passwordCheck= req.body.password;
-        let token = await loginController.validate(nombreCheck,passwordCheck);
-        let customer = await customerController.nameCustomer(nombreCheck);
+        let token = await loginController.validate(mailCheck,passwordCheck);
+        let customer = await customerController.nameCustomer(mailCheck);
         res.status(200).json({token, customer});
         
     }catch (err) {
