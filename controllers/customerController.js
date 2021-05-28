@@ -37,7 +37,9 @@ class Client {
 
 
     async deleteCustomer(id){
-        return Customer.destroy({where: {id: id}});
+        return Customer.destroy({
+            where: {id}
+        })
     }
 
     //Hay que cambiar los datos que cambiamos

@@ -8,7 +8,7 @@ const admin = require('../middleware/admin');
 
 router.get('/', admin, async (req, res) => {
     try {
-        res.json(await customerController.findAll());
+        res.json(await customerController.allCustomer());
     }catch (err) {
         return res.status(500).json({
         message: err.message
@@ -65,10 +65,10 @@ router.put('/', async (req, res)=> {
     }
 });
 
-router.delete('/:id', admin, async (req, res) =>{
+router.delete('/', admin, async (req, res) =>{
     try {
-        const id = req.params.id;
-        res.json(await pasajeroController.deleteCustomer(id));
+        const id = req.body.id;
+        res.json(await customerController.deleteCustomer(id));
         
     }catch (err) {
         return res.status(500).json({
