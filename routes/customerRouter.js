@@ -42,18 +42,10 @@ router.get('/:name', authenticate, async (req, res)=> {
     }
 });
 
-router.post('/', async (req, res)=> {
+router.post('/', checkMail, async (req, res)=> {
     try {
-        
         const body = req.body;
-        // const mailTest = body.mail;
-        // console.log(mailTest, "<<<===== Mail from Postman");
-        // const pruebaMail = await customerController.existMail(mailTest);
-        // console.log(pruebaMail, "<<<<<<<============= Mail de la base de datos");
-
-        // if(mailTest != pruebaMail){
-            res.json(await customerController.newCustomer(body));
-        // }
+        res.json(await customerController.newCustomer(body));
         
     } catch (err) {
         return res.status(500).json({

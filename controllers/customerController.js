@@ -21,14 +21,6 @@ class Client {
         })
     }
 
-    async existMail(mail){
-        let user = Customer.findOne({
-            where: {mail}
-        })
-        console.log(user.mail, "<<<<============== Existeeeee");
-        return user.mail;
-    }
-
     async customerId(id){
 
         return Customer.findByPk(id);
