@@ -1,7 +1,8 @@
 const router = require("express").Router();
 const customerController = require("../controllers/customerController.js");
-const authenticate = require('../middleware/authenticate');
-const admin = require('../middleware/admin');
+const authenticate = require('../middleware/authenticate.js');
+const admin = require('../middleware/admin.js');
+const checkMail = require('../middleware/checkMail.js');
 
 
 //CRUD CUSTOMER
@@ -43,8 +44,16 @@ router.get('/:name', authenticate, async (req, res)=> {
 
 router.post('/', async (req, res)=> {
     try {
+        
         const body = req.body;
-        res.json(await customerController.newCustomer(body));
+        // const mailTest = body.mail;
+        // console.log(mailTest, "<<<===== Mail from Postman");
+        // const pruebaMail = await customerController.existMail(mailTest);
+        // console.log(pruebaMail, "<<<<<<<============= Mail de la base de datos");
+
+        // if(mailTest != pruebaMail){
+            res.json(await customerController.newCustomer(body));
+        // }
         
     } catch (err) {
         return res.status(500).json({
@@ -52,6 +61,8 @@ router.post('/', async (req, res)=> {
         });
     }
 });
+
+
 
 router.put('/', async (req, res)=> {
     try {

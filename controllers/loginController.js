@@ -9,6 +9,9 @@ class LoginController {
     async validate(mailCheck,passwordCheck){
         
         let customer = await customerController.mailCustomer(mailCheck);
+        if (customer == null){
+            throw new Error('Wrong user or password');
+        }
         let password = customer.password;
 
         let verify = await bcrypt.compare(passwordCheck, password);
