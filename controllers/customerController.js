@@ -42,16 +42,14 @@ class Client {
         })
     }
 
-    //Hay que cambiar los datos que cambiamos
-
-    // async modifyCustomer(attributes){
-    //     return Customer.update(
-    //         //Datos que cambiamos
-    //         {edad: attributes.edad, especialidad: attributes.especialidad},
-    //         //Donde..
-    //         {where: {id: attributes.id}}
-    //     )
-    // }
+    async modifyCustomer(attributes){
+        return Customer.update(
+            //Datos que cambiamos
+            {phone: attributes.phone, address: attributes.address, city: attributes.city, postalcode: attributes.postalcode},
+            //Donde..
+            {where: {id: attributes.id}}
+        )
+    }
 }
 
 let customerController = new Client();
