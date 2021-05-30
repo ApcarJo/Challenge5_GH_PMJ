@@ -9,6 +9,11 @@ class Rent{
         return Order.create(body);
     }
 
+    async allOrders(){
+
+        return Order.findAll();
+
+    }
 
     async deleteOrder(id){
         return Order.destroy({

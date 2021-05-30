@@ -12,7 +12,16 @@ const admin = require ('../middleware/admin.js');
 
 
 //GET - ALL ORDERS - ADMIN
+router.get('/', admin, async (req, res) => {
+     try {
+        res.json(await orderController.allOrders());
 
+    }catch (err) {
+        return res.status(500).json({
+            message: err.message
+        });
+    }
+});
 
 
 // PUSH - CREATE A NEW ORDER
@@ -28,6 +37,7 @@ router.post("/", authenticate, async (req,res) =>{
     }
 });
 
+// UPDATE - MODIFY ORDER - ADMIN
 
 // DELETE - DELETE ORDER
 router.delete('/', admin, async (req, res) => {
