@@ -49,8 +49,9 @@ The technologies we used were: <br> <br>
 ![Node.js](https://cdn.iconscout.com/icon/free/png-256/node-js-3-1174937.png)
 ![Express.js](https://d2m06gn7cjwia2.cloudfront.net/express.png)
 ![JWT](https://ps.w.org/jwt-auth/assets/icon-256x256.png?rev=2298869)
-![BCrypt](https://bcrypt.online/images/bcrypt_esse_tools_logo_square.png)
-
+![BCrypt](https://cdn.substack.com/image/fetch/w_264,c_limit,f_auto,q_auto:best,fl_progressive:steep/https%3A%2F%2Fbucketeer-e05bbc84-baa3-437e-9518-adb32be77984.s3.amazonaws.com%2Fpublic%2Fimages%2F8e9aa3e7-93f3-45aa-8aac-d8acf45f33b7_256x256.png)
+![Postman](https://cdn.iconscout.com/icon/free/png-256/postman-3521648-2945092.png)
+![MySQL Workbench](https://alejandroquirospascual.files.wordpress.com/2014/10/mysql_workbench.png)
 
 
 
@@ -101,20 +102,27 @@ This js file **imports the .Router() utility from Express.js**, which is used to
 
 
 ## Endpoints and DB Management
-## How to...
+### Prerequisites
+<br>
 
-Clone the project:
-https://github.com/PedroAgullo/Challenge5_GH_PMJ
+Clone the project from [here](https://github.com/PedroAgullo/Challenge5_GH_PMJ).
 
-Install dependencies: npm i
+Install the needed dependencies (on Bash): 
+```
+npm i
+```
 
-Install Postman from https://www.postman.com/downloads/
+Install Postman from [here](https://www.postman.com/downloads/).
 
-Add a new collection and use GET with the address: http://localhost:3000 
-You can find in line 3 of index.js the variable port with 3000, is the port we used by default, you can change it.
+In Postman:
+1. Add a new collection
+2. Use GET with the address: http://localhost:3000 <br> <br>
+Although we used 3000 as the default port, you can use another one of your choice.
 
-## Movies:
-To search top rated movies just write:<br>
+### Movies:
+<br>
+
+To search top rated movies type the following:<br>
 http://localhost:3000/movies
 
 To find movies by id just add a number after movies: POST<br>
@@ -131,7 +139,9 @@ http://localhost:3000/movies/actor/
 
 
 
-## Customers
+### Customers
+<br>
+
 To get the list of all customers: GET<br>
 http://localhost:3000/customer
 
@@ -141,7 +151,7 @@ http://localhost:3000/customer/id
 To find a customer by name: POST - {"name": "name"}<br>
 http://localhost:3000/customer/name
 
-To create a new customer (this will check first if mail exists in the database): POST<br>
+To create a new customer **(this will check first if mail exists in the database)**: POST<br>
 http://localhost:3000/customer
 
 To modify some attributes of the customer: PUT<br>
@@ -150,7 +160,9 @@ http://localhost:3000/customer
 To delete a customer: DELETE - {"id": "id"}<br>
 http://localhost:3000/customer
 
-## Login
+### Login
+<br>
+
 
 To log in: POST - {"mail": "yourmail", "password", "yourpassowrd"}
 http://localhost:3000/login/
@@ -158,7 +170,9 @@ http://localhost:3000/login/
 Do not forget to save your token to postman Authorization "bearer token", to realize your actions.
 
 
-##  Orders
+###  Orders
+<br>
+
 To get the list of all orders: GET<br>
 http://localhost:3000/order
 
@@ -176,7 +190,9 @@ To delete a order: DELETE - {"id": "id"}<br>
 http://localhost:3000/order
 
 
-## Series
+### Series
+<br>
+
 To obtain a list of top rated series:<br>
 http://localhost:3000/series/toprated
 
@@ -225,7 +241,9 @@ Las tecnologías empleadas fueron: <br> <br>
 ![Node.js](https://cdn.iconscout.com/icon/free/png-256/node-js-3-1174937.png)
 ![Express.js](https://d2m06gn7cjwia2.cloudfront.net/express.png)
 ![JWT](https://ps.w.org/jwt-auth/assets/icon-256x256.png?rev=2298869)
-![BCrypt](https://bcrypt.online/images/bcrypt_esse_tools_logo_square.png)
+![BCrypt](https://cdn.substack.com/image/fetch/w_264,c_limit,f_auto,q_auto:best,fl_progressive:steep/https%3A%2F%2Fbucketeer-e05bbc84-baa3-437e-9518-adb32be77984.s3.amazonaws.com%2Fpublic%2Fimages%2F8e9aa3e7-93f3-45aa-8aac-d8acf45f33b7_256x256.png)
+![Postman](https://cdn.iconscout.com/icon/free/png-256/postman-3521648-2945092.png)
+![MySQL Workbench](https://alejandroquirospascual.files.wordpress.com/2014/10/mysql_workbench.png)
 
 ## Index, routing y middleware
 
@@ -273,10 +291,117 @@ router.use('/series', seriesRouter);
 module.exports = router;
 
 ```
-This js file **imports the .Router() utility from Express.js**, which is used to **link the moviesRouter and seriesRouter paths, and therefore their content, to index.js**. In this sense, **router.js is merely a link between the main application (index.js) to its dependencies.**
 
 Este archivo js **importa la herramienta .Router() desde Express.js**, la cual emplea para **enlazar las rutas de moviesRouter, loginRouter, orderRouter y customerRouter, y por tanto su contenido, con index.js**. En este sentido, **router.js es un mero enlace entre la aplicación principal (index.js) con sus dependencias.**
 
+<br>
 
 ## Gestión de los Endpoints y la base de datos
+### Prerequisitos
+<br>
+
+Clonar el proyecto desde [aquí](https://github.com/PedroAgullo/Challenge5_GH_PMJ).
+
+Instalar dependencias (desde Bash):
+```
+ npm i
+ ```
+
+Instalar Postman desde [aquí](https://www.postman.com/downloads/).
+
+En Postman:
+1. Crea una nueva colección
+2. Emplea GET con la dirección: http://localhost:3000 <br> <br>
+Aunque nosotros hemos usado el puerto 3000, se puede utilizar cualquier otro a voluntad.
+
+### Movies:
+<br>
+Búsqueda de películas mejor valoradas<br>
+
+http://localhost:3000/movies
+
+Búsqueda de películas por id POST<br>
+http://localhost:3000/movies
+
+Búsqueda de películas por título POST<br>
+http://localhost:3000/movies/title 
+
+Búsqueda de películas por género POST<br>
+http://localhost:3000/movies/genre 
+
+Búsqueda de películas por actor/actriz POST<br>
+http://localhost:3000/movies/actor/
+
+
+
+### Customers
+<br>
+Obtener una lista de todos los clientes GET<br>
+
+http://localhost:3000/customer
+
+Búsqueda de cliente por id POST - {"customerId": "id"}<br>
+http://localhost:3000/customer/id
+
+Búsqueda de cliente por nombre POST - {"name": "name"}<br>
+http://localhost:3000/customer/name
+
+Crear un nuevo usuario **(comprobará primero si el email ya está registrado)** POST<br>
+http://localhost:3000/customer
+
+Modificar datos del cliente PUT<br>
+http://localhost:3000/customer
+
+Eliminar cliente DELETE - {"id": "id"}<br>
+http://localhost:3000/customer
+
+### Login
+<br>
+
+Login POST - {"mail": "yourmail", "password", "yourpassowrd"}
+http://localhost:3000/login/
+
+
+**No olvidar almacenar el token en Authorization/Bearer Token!**
+
+
+###  Orders
+<br>
+Listar todos los pedidos GET<br>
+
+http://localhost:3000/order
+
+Búsqueda de pedido por id POST - {"id": "id"}<br>
+http://localhost:3000/order/id
+
+Búsqueda de pedido por ciudad POST - {"city": "city"}<br>
+http://localhost:3000/order/city
+
+Crear nuevo pedido POST<br>
+http://localhost:3000/order/
+
+Borrar pedido DELETE - {"id": "id"}<br>
+http://localhost:3000/order
+
+
+### Series
+<br>
+Listar series mejor valoradas<br>
+
+http://localhost:3000/series/toprated
+
+Búsqueda de series por id<br>
+http://localhost:3000/series/id/ (your id)
+
+Búsqueda de series por título<br>
+http://localhost:3000/series/title/ (your title)
+
+Listar series que serán emitidas en los próximos siete días<br>
+http://localhost:3000/series/ontheair7/
+
+Listar series que serán representadas en cines o teatros<br>
+http://localhost:3000/series/screenedtheater/
+<br>
+<br>
+
 ## Conclusiones
