@@ -7,7 +7,7 @@ const admin = require ('../middleware/admin.js');
 
 
 //GET - ID ORDER - NO ADMIN
-router.get('/city', async (req, res) => {
+router.get('/city', admin, async (req, res) => {
     try {
         // let city = req.body.city;
         res.json(await orderController.allCities());
@@ -19,7 +19,7 @@ router.get('/city', async (req, res) => {
    }
 });
 
-router.get('/city/:city', async (req, res) => {
+router.get('/city/:city', admin, async (req, res) => {
     try {
         let city = req.params.city;
         res.json(await orderController.byCity(city));
