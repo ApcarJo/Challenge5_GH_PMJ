@@ -113,7 +113,7 @@ http://localhost:3000/movies/actor/
 To get the list of all customers: GET<br>
 http://localhost:3000/customer
 
-To find a customer by id: POST - {"id": "id"}<br>
+To find a customer by id: POST - {"customerId": "id"}<br>
 http://localhost:3000/customer/id
 
 To find a customer by name: POST - {"name": "name"}<br>
