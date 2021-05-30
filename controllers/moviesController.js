@@ -32,9 +32,15 @@ class Pelicula{
                 return res.data;
             }
         }
-        // https://api.themoviedb.org/3/discover/movie?api_key=210d6a5dd3f16419ce349c9f1b200d6d&with_genres=${code}
         
     }
+
+    async searchByAct(act){
+        let res = await axios.get(`http://api.themoviedb.org/3/search/person?query=${act}&api_key=210d6a5dd3f16419ce349c9f1b200d6d`);
+        return res.data;
+    }
+    
+
 
 }
 

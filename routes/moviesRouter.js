@@ -14,9 +14,9 @@ router.get('/', async (req, res) => {
 });
 
 //Búsqueda de película por ID
-router.get('/:id', async (req, res)=> {             //id/:id
+router.post('/id', async (req, res)=> {             //id/:id
     try {
-        let id = req.params.id;
+        let id = req.body.id;
         res.json(await moviesController.searchById(id));
         
     } catch (err) {
@@ -28,9 +28,9 @@ router.get('/:id', async (req, res)=> {             //id/:id
 
 // Getting movies by title
 
-router.get('/title/:title', async (req, res)=> {
+router.post('/title', async (req, res)=> {
     try {  
-        let title = req.params.title;
+        let title = req.body.title;
         res.json(await moviesController.searchByTitle(title));
     } catch (err) {
         return res.status(500).json({
@@ -39,9 +39,20 @@ router.get('/title/:title', async (req, res)=> {
     }
 });
 
-router.get('/genre/:movieGenre', async (req, res)=> {
+router.post('/actor', async (req, res)=> {
+    try {  
+        let actor = req.body.actor;
+        res.json(await moviesController.searchByAct(actor));
+    } catch (err) {
+        return res.status(500).json({
+            message: err.message
+        });
+    }
+});
+
+router.post('/genre', async (req, res)=> {
     try {
-        let movieGenre = req.params.movieGenre;
+        let movieGenre = req.body.genre;
         movieGenre = movieGenre.charAt(0).toUpperCase() + movieGenre.slice(1);
         res.json(await moviesController.searchByGenre(movieGenre));
     } catch (err) {
