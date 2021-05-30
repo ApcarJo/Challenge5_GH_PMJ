@@ -41,10 +41,8 @@ router.get('/title/:title', async (req, res)=> {
 
 router.get('/actor/:actor', async (req, res)=> {
     try {  
-        let act = req.params.act;
-        console.log("Entramos en moviesRouter");
-
-        res.json(await moviesController.searchByAct(act));
+        let actor = req.params.actor;
+        res.json(await moviesController.searchByAct(actor));
     } catch (err) {
         return res.status(500).json({
             message: err.message
