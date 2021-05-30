@@ -49,6 +49,7 @@ The technologies we used were: <br> <br>
 ![Node.js](https://cdn.iconscout.com/icon/free/png-256/node-js-3-1174937.png)
 ![Express.js](https://d2m06gn7cjwia2.cloudfront.net/express.png)
 ![JWT](https://ps.w.org/jwt-auth/assets/icon-256x256.png?rev=2298869)
+![BCrypt](https://bcrypt.online/images/bcrypt_esse_tools_logo_square.png)
 
 
 
@@ -217,6 +218,15 @@ El objetivo del proyecto es desarrollar un servicio (solo la parte backend) para
     * Características extra: Mostrar todos los Pedidos (solo para el Admin)
 * Gestión de Datos
     * Emplear un ORM (Sequelize/MongoDB/MySQL)
+
+Las tecnologías empleadas fueron: <br> <br>
+![Visual Studio Code](https://code.visualstudio.com/assets/favicon.ico)
+![JavaScript](https://camo.githubusercontent.com/3e9f1d82233cb9a42ed30a63d093f2b4502d879301f8cce220de7f0d3b84f5bf/687474703a2f2f33636f6e31342e62697a2f636f64652f5f646174612f6a732f696e74726f2f6a732d6c6f676f2e706e67)
+![Node.js](https://cdn.iconscout.com/icon/free/png-256/node-js-3-1174937.png)
+![Express.js](https://d2m06gn7cjwia2.cloudfront.net/express.png)
+![JWT](https://ps.w.org/jwt-auth/assets/icon-256x256.png?rev=2298869)
+![BCrypt](https://bcrypt.online/images/bcrypt_esse_tools_logo_square.png)
+
 ## Index, routing y middleware
 
 ### index.js
