@@ -44,8 +44,9 @@ The aim of the project was to develop an only-backend service for movies rental,
     * Use of an ORM (Sequelize/MongoDB/MySQL)
 
 The technologies we used were:
-![Express.js]()
-[Express.js](https://github.com/tkswann2/tech-logos/blob/master/express.png)<imc src="imageName.file" height="40px">
+
+![JavaScript](https://camo.githubusercontent.com/3e9f1d82233cb9a42ed30a63d093f2b4502d879301f8cce220de7f0d3b84f5bf/687474703a2f2f33636f6e31342e62697a2f636f64652f5f646174612f6a732f696e74726f2f6a732d6c6f676f2e706e67)
+
 
 ## Index, routing and middleware
 
