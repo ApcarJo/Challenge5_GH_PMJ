@@ -44,11 +44,7 @@ The aim of the project was to develop an only-backend service for movies rental,
     * Use of an ORM (Sequelize/MongoDB/MySQL)
 
 The technologies we used were:
-[![JavaScript](http://3con14.biz/code/_data/js/intro/js-logo.png)](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
-[![ES6](https://github.com/MarioTerron/logo-images/blob/master/logos/es6.png)](http://www.ecma-international.org/ecma-262/6.0/) 
-[![npm](https://github.com/MarioTerron/logo-images/blob/master/logos/npm.png)](https://www.npmjs.com/)
-[![NodeJS](https://github.com/FransLopez/logo-images/blob/master/logos/nodejs.png)](https://nodejs.org/)
-[![MySQL](https://sites.google.com/a/innovavirtual.org/tecceilpvi/_/rsrc/1444958444759/home/2015-ii/temas-a-investigar/my-sql-workbench/MySQLWorkbench.png)]
+![Express.js](https://github.com/tkswann2/tech-logos/blob/master/express.png)
 
 ## Index, routing and middleware
 
