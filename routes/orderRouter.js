@@ -7,7 +7,17 @@ const admin = require ('../middleware/admin.js');
 
 
 //GET - ID ORDER - NO ADMIN
+router.get('/city', async (req, res) => {
+    try {
+        // let city = req.body.city;
+        res.json(await orderController.byCity());
 
+   }catch (err) {
+       return res.status(500).json({
+           message: err.message
+       });
+   }
+});
 
 
 
