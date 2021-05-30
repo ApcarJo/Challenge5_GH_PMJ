@@ -43,7 +43,7 @@ The aim of the project was to develop an only-backend service for movies rental,
 * Data Management
     * Use of an ORM (Sequelize/MongoDB/MySQL)
 
-The technologies we used were:
+The technologies we used were: <br> <br>
 ![Visual Studio Code](https://code.visualstudio.com/assets/favicon.ico)
 ![JavaScript](https://camo.githubusercontent.com/3e9f1d82233cb9a42ed30a63d093f2b4502d879301f8cce220de7f0d3b84f5bf/687474703a2f2f33636f6e31342e62697a2f636f64652f5f646174612f6a732f696e74726f2f6a732d6c6f676f2e706e67)
 ![Node.js](https://cdn.iconscout.com/icon/free/png-256/node-js-3-1174937.png)
