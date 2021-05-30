@@ -1,12 +1,12 @@
 const { Order } = require('../models');
-const { Customer } = require('../models');
+// const { Customer } = require('../models');
+const Util = require('../util');
 
 
 class Rent{
 
     // Métodos controladores
     async newOrder(body){
-        console.log("newOrder", body);
         return Order.create(body);
     }
 
@@ -16,22 +16,18 @@ class Rent{
 
     }
 
-    async byCity(){
+    async allCities(){
 
         let ordersFind = await Order.findAll();
-        // let rarito = [];
-        let orderInfo;
-        let arrayCity = [];
-        for (let i in ordersFind){
-        // rarito.push(ordersfind[i].dataValues.customerId); //id de cada user de cada order obtenido
-        orderInfo = await Customer.findByPk(ordersFind[i].dataValues.customerId);
-           
-        arrayCity.push(orderInfo.name, orderInfo.city, ordersFind[i].id);
-        }
-        return arrayCity;
+        return Util.findCity(ordersFind);
     }
 
-    
+    async byCity(city){
+        console.log(city, "esta es la citie que estás buscando");
+        let ordersFind = await Order.findAll();
+        return Util.findByCity(ordersFind, city);
+    }
+
 
     async deleteOrder(id){
         return Order.destroy({

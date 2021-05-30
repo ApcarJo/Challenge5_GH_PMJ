@@ -10,7 +10,19 @@ const admin = require ('../middleware/admin.js');
 router.get('/city', async (req, res) => {
     try {
         // let city = req.body.city;
-        res.json(await orderController.byCity());
+        res.json(await orderController.allCities());
+
+   }catch (err) {
+       return res.status(500).json({
+           message: err.message
+       });
+   }
+});
+
+router.get('/city/:city', async (req, res) => {
+    try {
+        let city = req.params.city;
+        res.json(await orderController.byCity(city));
 
    }catch (err) {
        return res.status(500).json({
