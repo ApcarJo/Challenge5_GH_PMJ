@@ -29,8 +29,6 @@ router.post("/", authenticate, async (req,res) =>{
 });
 
 
-
-
 // DELETE - DELETE ORDER
 router.delete('/', admin, async (req, res) => {
     try {

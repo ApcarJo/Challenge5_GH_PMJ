@@ -3,10 +3,10 @@ const customerController = require ('../controllers/customerController.js');
 
 const checkMail = async (req, res, next) => {
 
-    const exists = await customerController.mailCustomer(req.body.mail);
+    const existsMail = await customerController.mailCustomer(req.body.mail);
 
     try {
-        if (exists != null){
+        if (existsMail != null){
             throw new Error ("El correo electrónico introducido ya existe.");            
             }
             return next();
