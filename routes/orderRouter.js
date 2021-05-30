@@ -46,6 +46,20 @@ router.get('/', admin, async (req, res) => {
 });
 
 
+//Find order by ID
+router.post('/id', authenticate, async (req, res)=> {             
+    try {
+        let body = req.body;
+        res.json(await orderController.orderId(body));
+        
+    } catch (err) {
+        return res.status(500).json({
+            mensaje: err.message
+        });
+    }
+});
+
+
 // PUSH - CREATE A NEW ORDER
 router.post("/", authenticate, async (req,res) =>{
     try{
