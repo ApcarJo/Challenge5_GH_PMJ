@@ -15,6 +15,7 @@ class Searchcity{
         return arrayCity;
     }
 
+    // Esta función podría simplemente llamar a la función anterior y filtrar por ciudad.
     async findByCity(ordersFind, city){
         let orderInfo;
         let arrayCity = [];

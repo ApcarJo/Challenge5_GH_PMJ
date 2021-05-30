@@ -18,10 +18,9 @@ router.get('/', admin, async (req, res) => {
 });
 
 //Find customer by ID
-router.post('/customer/', authenticate, async (req, res)=> {             
+router.post('/id', authenticate, async (req, res)=> {             
     try {
-        let id = req.body.customerId;
-        console.log(id);
+        let id = req.body.id;
         res.json(await customerController.customerId(id));
         
     } catch (err) {
@@ -32,9 +31,9 @@ router.post('/customer/', authenticate, async (req, res)=> {
 });
 
 //Find customer by name
-router.get('/:name', authenticate, async (req, res)=> {          
+router.post('/name', authenticate, async (req, res)=> {          
     try {
-        let name = req.params.name;
+        let name = req.body.name;
         res.json(await customerController.nameCustomer(name));
         
     } catch (err) {
@@ -59,7 +58,7 @@ router.post('/', checkMail, async (req, res)=> {
 
 
 //Modify a customer
-router.put('/', async (req, res)=> {
+router.put('/', authenticate, async (req, res)=> {
     try {
         const attributes = req.body;
         res.json(await customerController.modifyCustomer(attributes));

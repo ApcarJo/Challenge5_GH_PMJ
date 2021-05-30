@@ -19,9 +19,9 @@ router.get('/city', admin, async (req, res) => {
    }
 });
 
-router.get('/city/:city', admin, async (req, res) => {
+router.post('/city', admin, async (req, res) => {
     try {
-        let city = req.params.city;
+        let city = req.body.city;
         res.json(await orderController.byCity(city));
 
    }catch (err) {

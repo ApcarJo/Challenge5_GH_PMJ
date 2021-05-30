@@ -4,9 +4,9 @@ const seriesController = require("../controllers/seriesController.js");
 // CRUD
 // GET
 
-router.get("/id/:id", async (req,res) =>{
+router.get("/id", async (req,res) =>{
     try{
-        let id = req.params.id;
+        let id = req.body.id;
         res.json(await seriesController.searchById(id));
     }catch (err){
         return res.status(500).json({
@@ -25,9 +25,9 @@ router.get('/ontheair7', async (req,res)=> {
     }
 })
 
-router.get("/title/:tvTitle", async (req,res) => {
+router.post("/title", async (req,res) => {
     try {
-        let tvTitle = req.params.tvTitle;
+        let tvTitle = req.body.title;
         tvTitle = tvTitle.charAt(0).toUpperCase() + tvTitle.slice(1);
         res.json(await seriesController.searchByTvTitle(tvTitle));
     } catch (err) {
@@ -37,9 +37,9 @@ router.get("/title/:tvTitle", async (req,res) => {
     }
 });
 
-router.get("/screenedtheater/:id", async (req, res) => {
+router.post("/screenedtheater", async (req, res) => {
     try{
-        let id = req.params.id;
+        let id = req.body.id;
         res.json(await seriesController.screenedTheater(id));
     } catch (err){
         return res.status(500).json({
