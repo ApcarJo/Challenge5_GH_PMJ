@@ -1,14 +1,23 @@
 # Challenge 5: Movies Website Backend II: Finder
 ## Made by [Pedro Agulló](https://github.com/PedroAgullo), [Jose Luis Aparicio](https://github.com/ApcarJo) and [Miguel Torres](https://github.com/migueltmsp)<br>
+## Hecho por [Pedro Agulló](https://github.com/PedroAgullo), [Jose Luis Aparicio](https://github.com/ApcarJo) and [Miguel Torres](https://github.com/migueltmsp)<br>
 
 This project was proposed and deployed on the 5th week of [GeeksHubs' Full Stack Developer Bootcamp](https://geekshubsacademy.com/)
+
+Este proyecto se propuso e implementó en la 5ª semana del [Bootcamp Full Stack Developer de GeeksHubs](https://geekshubsacademy.com/)
 
 ## Index
 [English](##English)
 * [Goal and used technologies](##Goal-and-used-technologies)
-* [Sample1](##Sample-1)
-* [Sample2](##Sample-2)
+* [Index, routing and middleware](##Index,-routing-and-middleware)
+* [Endpoints and DB Management](##Endpoints-and-DB-Management)
 * [Conclusions](##Conclusions)
+
+[Español](##Español)
+* [Objetivo y tecnologías empleadas](##Objetivo-y-tecnologías-empleadas)
+* [Index, routing y middleware](##Index,-routing-y-middleware)
+* [Gestión de los Endpoints y la base de datos](##Gestión-de-los-Endpoints-y-la-base-de-datos)
+* [Conclusiones](##Conclusiones)
 
 ## English
 ## Goal and used technologies
@@ -34,7 +43,14 @@ The aim of the project was to develop an only-backend service for movies rental,
 * Data Management
     * Use of an ORM (Sequelize/MongoDB/MySQL)
 
-## Sample 1
+The technologies we used were:
+[![JavaScript](http://3con14.biz/code/_data/js/intro/js-logo.png)](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
+[![ES6](https://github.com/MarioTerron/logo-images/blob/master/logos/es6.png)](http://www.ecma-international.org/ecma-262/6.0/) 
+[![npm](https://github.com/MarioTerron/logo-images/blob/master/logos/npm.png)](https://www.npmjs.com/)
+[![NodeJS](https://github.com/FransLopez/logo-images/blob/master/logos/nodejs.png)](https://nodejs.org/)
+[![MySQL](https://sites.google.com/a/innovavirtual.org/tecceilpvi/_/rsrc/1444958444759/home/2015-ii/temas-a-investigar/my-sql-workbench/MySQLWorkbench.png)]
+
+## Index, routing and middleware
 
 ### index.js
 ```
@@ -50,7 +66,7 @@ app.listen(port, () => console.log(`Node server running on http://localhost:${po
 
 ```
 
-This jss file:
+This js file:
 1. imported the **Express.js** library,
 2. saved its functionalities on "app",
 3. selected 3000 as the server's port and
@@ -75,10 +91,11 @@ router.use('/series', seriesRouter);
 module.exports = router;
 
 ```
-This js file **imports the .Router() utility from Express.js**, which is used to **link the moviesRouter and seriesRouter paths, and therefore their content, to index.js**. In this sense, **router.js is merely a link between the main application (index.js) to its dependencies.**
+This js file **imports the .Router() utility from Express.js**, which is used to **link the moviesRouter, customerRouter, orderRouter and loginRouter paths, and therefore their content, to index.js**. In this sense, **router.js is merely a link between the main application (index.js) to its dependencies.**
 
-## Sample 2
 
+
+## Endpoints and DB Management
 ## How to...
 
 Clone the project:
@@ -169,4 +186,83 @@ http://localhost:3000/series/ontheair7/
 
 Obtaining series which are screened on theaters:<br>
 http://localhost:3000/series/screenedtheater/
+<br>
+<br>
 
+
+## Español
+## Objetivo y tecnologías empleadas
+El objetivo del proyecto es desarrollar un servicio (solo la parte backend) para alquiler de películas, con cuatro áreas definidas: <br>
+
+
+* Gestión de Usuarios
+    * Endpoint para Darse de Alta
+    * Endpoint para mostart Información de la Cuenta
+    * Endpoint para Darse de Baja
+    * Endpoint para Iniciar Sesión
+    * Características extra: JWT; Admin y Cliente
+* Gestión de Películas/Productos
+    * Endpoint para Búsqueda por Título
+    * Endpoint para buscar por Id
+    * Endpoint para Mostrar todas las Películas
+    * Características extra: Filtrar por Actriz/Actor; <br>Filtrar por Género
+* Gestión de los Pedidos
+    * Endpoint para Crear un Pedido
+        * Una única Película por Cliente
+        * Fechas de Recepción y de Devolución
+    * Características extra: Mostrar todos los Pedidos (solo para el Admin)
+* Gestión de Datos
+    * Emplear un ORM (Sequelize/MongoDB/MySQL)
+## Index, routing y middleware
+
+### index.js
+```
+const express = require('express');
+const app = express();
+const port = 3000;
+const router = require('./router');
+
+app.use(router);
+app.use(express.json());
+
+app.listen(port, () => console.log(`Node server running on http://localhost:${port}`));
+
+```
+
+Este archivo js:
+1. importó la librería **Express.js**,
+2. guardó sus herramientas en "app",
+3. seleccionó 3000 como el puerto para el servidor y
+4. linked **router.js**.
+4. enlazó con **router.js**
+
+
+Entonces, las herramientras de router.js y de express.json fueron "usadas", o, asumimos, guardadas en memoria.
+
+
+
+**app.listen() _lanzó_ un servidor local node.js que emplea el puerto 3000.**
+<br>
+
+
+### router.js
+```
+const router = require('express').Router();
+
+const moviesRouter = require('./routes/moviesRouter.js');
+const seriesRouter = require('./routes/seriesRouter.js');
+
+router.use('/movies', moviesRouter);
+router.use('/series', seriesRouter);
+
+
+module.exports = router;
+
+```
+This js file **imports the .Router() utility from Express.js**, which is used to **link the moviesRouter and seriesRouter paths, and therefore their content, to index.js**. In this sense, **router.js is merely a link between the main application (index.js) to its dependencies.**
+
+Este archivo js **importa la herramienta .Router() desde Express.js**, la cual emplea para **enlazar las rutas de moviesRouter, loginRouter, orderRouter y customerRouter, y por tanto su contenido, con index.js**. En este sentido, **router.js es un mero enlace entre la aplicación principal (index.js) con sus dependencias.**
+
+
+## Gestión de los Endpoints y la base de datos
+## Conclusiones

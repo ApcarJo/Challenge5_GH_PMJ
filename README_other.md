@@ -1,10 +1,7 @@
 # Challenge 5: Movies Website Backend II: Finder
 ## Made by [Pedro Agulló](https://github.com/PedroAgullo), [Jose Luis Aparicio](https://github.com/ApcarJo) and [Miguel Torres](https://github.com/migueltmsp)<br>
-## Hecho por [Pedro Agulló](https://github.com/PedroAgullo), [Jose Luis Aparicio](https://github.com/ApcarJo) and [Miguel Torres](https://github.com/migueltmsp)<br>
 
 This project was proposed and deployed on the 5th week of [GeeksHubs' Full Stack Developer Bootcamp](https://geekshubsacademy.com/)
-
-Este proyecto se propuso e implementó en la 5ª semana del [Bootcamp Full Stack Developer de GeeksHubs](https://geekshubsacademy.com/)
 
 ## Index
 [English](##English)
@@ -12,12 +9,6 @@ Este proyecto se propuso e implementó en la 5ª semana del [Bootcamp Full Stack
 * [Sample1](##Sample-1)
 * [Sample2](##Sample-2)
 * [Conclusions](##Conclusions)
-
-[Español](##Español)
-* [Objetivo y tecnologías empleadas](##Objetivo-y-tecnologías-empleadas)
-* [Ejemplo1](##Ejemplo-1)
-* [Ejemplo2](##Ejemplo-2)
-* [Conclusiones](##Conclusiones)
 
 ## English
 ## Goal and used technologies
@@ -91,7 +82,7 @@ This js file **imports the .Router() utility from Express.js**, which is used to
 ## How to...
 
 Clone the project:
-https://github.com/ApcarJo/Challenge4_GH_PMJ.git
+https://github.com/PedroAgullo/Challenge5_GH_PMJ
 
 Install dependencies: npm i
 
@@ -100,18 +91,70 @@ Install Postman from https://www.postman.com/downloads/
 Add a new collection and use GET with the address: http://localhost:3000 
 You can find in line 3 of index.js the variable port with 3000, is the port we used by default, you can change it.
 
-To search top rated films just write:<br>
+## Movies:
+To search top rated movies just write:<br>
 http://localhost:3000/movies
 
-To find films by id just add a number after movies:<br>
-http://localhost:3000/movies/ (your number)
+To find movies by id just add a number after movies: POST<br>
+http://localhost:3000/movies
 
-To find films by title:<br>
-http://localhost:3000/movies/title/ (your title)
+To find movies by title: POST<br>
+http://localhost:3000/movies/title 
 
-To search movies by genre:<br>
-http://localhost:3000/movies/genre/ (your genre)
+To search movies by genre: POST<br>
+http://localhost:3000/movies/genre 
 
+To search movies by actor/actress: POST<br>
+http://localhost:3000/movies/actor/
+
+
+
+## Customers
+To get the list of all customers: GET<br>
+http://localhost:3000/customer
+
+To find a customer by id: POST - {"customerId": "id"}<br>
+http://localhost:3000/customer/id
+
+To find a customer by name: POST - {"name": "name"}<br>
+http://localhost:3000/customer/name
+
+To create a new customer (this will check first if mail exists in the database): POST<br>
+http://localhost:3000/customer
+
+To modify some attributes of the customer: PUT<br>
+http://localhost:3000/customer
+
+To delete a customer: DELETE - {"id": "id"}<br>
+http://localhost:3000/customer
+
+## Login
+
+To log in: POST - {"mail": "yourmail", "password", "yourpassowrd"}
+http://localhost:3000/login/
+
+Do not forget to save your token to postman Authorization "bearer token", to realize your actions.
+
+
+##  Orders
+To get the list of all orders: GET<br>
+http://localhost:3000/order
+
+To find a order by id: POST - {"id": "id"}<br>
+http://localhost:3000/order/id
+
+To find a order by city: POST - {"city": "city"}<br>
+http://localhost:3000/order/city
+
+
+To create a new order: POST<br>
+http://localhost:3000/order/
+
+To delete a order: DELETE - {"id": "id"}<br>
+http://localhost:3000/order
+
+
+## Series
 To obtain a list of top rated series:<br>
 http://localhost:3000/series/toprated
 
@@ -127,29 +170,3 @@ http://localhost:3000/series/ontheair7/
 Obtaining series which are screened on theaters:<br>
 http://localhost:3000/series/screenedtheater/
 
-## Español
-## Objetivo y tecnologías empleadas
-El objetivo del proyecto es desarrollar un servicio (solo la parte backend) para alquiler de películas, con cuatro áreas definidas: <br>
-
-
-* Gestión de Usuarios
-    * Endpoint para Darse de Alta
-    * Endpoint para mostart Información de la Cuenta
-    * Endpoint para Darse de Baja
-    * Endpoint para Iniciar Sesión
-    * Características extra: JWT; Admin y Cliente
-* Gestión de Películas/Productos
-    * Endpoint para Búsqueda por Título
-    * Endpoint para buscar por Id
-    * Endpoint para Mostrar todas las Películas
-    * Características extra: Filtrar por Actriz/Actor; <br>Filtrar por Género
-* Gestión de los Pedidos
-    * Endpoint para Crear un Pedido
-        * Una única Película por Cliente
-        * Fechas de Recepción y de Devolución
-    * Características extra: Mostrar todos los Pedidos (solo para el Admin)
-* Gestión de Datos
-    * Emplear un ORM (Sequelize/MongoDB/MySQL)
-## Ejemplo 1
-## Ejemplo 2
-## Conclusiones
