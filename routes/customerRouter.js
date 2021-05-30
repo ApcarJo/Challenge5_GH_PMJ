@@ -6,7 +6,7 @@ const checkMail = require('../middleware/checkMail.js');
 
 
 //CRUD CUSTOMER
-
+//Get All customers.
 router.get('/', admin, async (req, res) => {
     try {
         res.json(await customerController.allCustomer());
@@ -17,7 +17,8 @@ router.get('/', admin, async (req, res) => {
     }
 });
 
-router.post('/customer/', authenticate, async (req, res)=> {             //id/:id
+//Find customer by ID
+router.post('/customer/', authenticate, async (req, res)=> {             
     try {
         let id = req.body.customerId;
         console.log(id);
@@ -30,6 +31,7 @@ router.post('/customer/', authenticate, async (req, res)=> {             //id/:i
     }
 });
 
+//Find customer by name
 router.get('/:name', authenticate, async (req, res)=> {          
     try {
         let name = req.params.name;
@@ -42,6 +44,7 @@ router.get('/:name', authenticate, async (req, res)=> {
     }
 });
 
+//Add a new Customer
 router.post('/', checkMail, async (req, res)=> {
     try {
         const body = req.body;
@@ -55,7 +58,7 @@ router.post('/', checkMail, async (req, res)=> {
 });
 
 
-
+//Modify a customer
 router.put('/', async (req, res)=> {
     try {
         const attributes = req.body;
@@ -68,6 +71,8 @@ router.put('/', async (req, res)=> {
     }
 });
 
+
+//Delete a customer
 router.delete('/', admin, async (req, res) =>{
     try {
         const id = req.body.id;
