@@ -16,6 +16,12 @@ class Rent{
 
     }
 
+    async orderId(body){
+
+        return Order.findByPk(body.id);
+
+    }
+
     async allCities(){
 
         let ordersFind = await Order.findAll();

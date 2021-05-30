@@ -20,7 +20,7 @@ router.get('/', admin, async (req, res) => {
 //Find customer by ID
 router.post('/id', authenticate, async (req, res)=> {             
     try {
-        let id = req.body.id;
+        let id = req.body.customerId;
         res.json(await customerController.customerId(id));
         
     } catch (err) {
